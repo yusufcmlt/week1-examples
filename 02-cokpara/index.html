@@ -1,14 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Billgates parasi harcamaca</title>
+    <link rel="stylesheet" href="style.css" />
+
     <script src="./index.js"></script>
-    <div>hello</div>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <!-- Bill Gates'in parasını harca uygulaması
+
+Ornek verelim, 
+
+Bill Gates'in parası Number.MAX_SAFE_INTEGER olsun. Aşağıdaki ürün listesini (productList) kullanarak bu parayı harcayabileceğimiz bir uygulama yapalım.
+
+1) Uygulama açıldığında aşağıdaki ürünler ekrana gelsin ve ekranda her ürün için [fotoğraf, ürün, ekle butonu] içeren bir kart yer alsın.
+2) Ekle butonunun üzerine geldiğımiz zaman o üründen kaç tane alabileceğimizi görelim
+3) Ekle butonuna bastığımız zaman ürün kartının yanına bu üründen kaç tane eklediğimizi görelim.
+4) Paramız bittiyse ürün ekleyemeyelim
+5) Tüm kartların üzerinde ne kadar paramız kaldığını gösteren bir yazı yer alsın Kalan Para: xxxx -->
+    <header class="header">
+      <h1>Kalan Para: <span id="kalanPara">19999</span></h1>
+    </header>
+    <div class="container" id="urunlerList">
+      <!-- { id: 1, name: 'Kola', price: 4, img: 'https://i.sozcu.com.tr/wp-content/uploads/2016/01/19/diyet-kola.jpg' }, -->
+
+      <div class="urun">
+        <div class="urun__resim-container">
+          <img
+            src="https://i.sozcu.com.tr/wp-content/uploads/2016/01/19/diyet-kola.jpg"
+            alt="kola"
+            class="urun__resim"
+            id="urunResim"
+          />
+          <p class="urun__text urun__alinabilecek">
+            Alabilecegin: <span id="urunAlinabilecek">10</span>
+          </p>
+        </div>
+        <div class="urun__info-container">
+          <p class="urun__text">Fiyat: <span id="urunFiyat">10</span></p>
+          <p class="urun__text">Alinan: <span id="urunAlindi">20</span></p>
+          <button class="urun__ekle-btn">Satin AL</button>
+        </div>
+      </div>
+      <div class="urun">
+        <div class="urun__resim-container">
+          <img
+            src="https://i.sozcu.com.tr/wp-content/uploads/2016/01/19/diyet-kola.jpg"
+            alt="kola"
+            class="urun__resim"
+            id="urunResim"
+          />
+          <p class="urun__text urun__alinabilecek">
+            Alabilecegin: <span id="urunAlinabilecek">10</span>
+          </p>
+        </div>
+        <div class="urun__info-container">
+          <p class="urun__text">Fiyat: <span id="urunFiyat">10</span></p>
+          <p class="urun__text">Alinan: <span id="urunAlindi">20</span></p>
+          <button class="urun__ekle-btn">Satin AL</button>
+        </div>
+      </div>
+      <div class="urun">
+        <div class="urun__resim-container">
+          <img
+            src="https://i.sozcu.com.tr/wp-content/uploads/2016/01/19/diyet-kola.jpg"
+            alt="kola"
+            class="urun__resim"
+            id="urunResim"
+          />
+          <p class="urun__text urun__alinabilecek">
+            Alabilecegin: <span id="urunAlinabilecek">10</span>
+          </p>
+        </div>
+        <div class="urun__info-container">
+          <p class="urun__text">Fiyat: <span id="urunFiyat">10</span></p>
+          <p class="urun__text">Alinan: <span id="urunAlindi">20</span></p>
+          <button class="urun__ekle-btn">Satin AL</button>
+        </div>
+      </div>
+      <div class="urun">
+        <div class="urun__resim-container">
+          <img
+            src="https://i.sozcu.com.tr/wp-content/uploads/2016/01/19/diyet-kola.jpg"
+            alt="kola"
+            class="urun__resim"
+            id="urunResim"
+          />
+          <p class="urun__text urun__alinabilecek">
+            Alabilecegin: <span id="urunAlinabilecek">10</span>
+          </p>
+        </div>
+        <div class="urun__info-container">
+          <p class="urun__text">Fiyat: <span id="urunFiyat">10</span>TL</p>
+          <p class="urun__text">Alinan: <span id="urunAlindi">20</span>Adet</p>
+          <button class="urun__ekle-btn">Satin AL</button>
+        </div>
+      </div>
+      <div class="urun">
+        <div class="urun__resim-container">
+          <img
+            src="https://i.sozcu.com.tr/wp-content/uploads/2016/01/19/diyet-kola.jpg"
+            alt="kola"
+            class="urun__resim"
+            id="urunResim"
+          />
+          <p class="urun__text urun__alinabilecek">
+            Alabilecegin: <span id="urunAlinabilecek">10</span> adet
+          </p>
+        </div>
+        <div class="urun__info-container">
+          <p class="urun__text">Fiyat: <span id="urunFiyat">10</span></p>
+          <p class="urun__text">Alinan: <span id="urunAlindi">20</span></p>
+          <button class="urun__ekle-btn">Satin AL</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
