@@ -17,13 +17,9 @@ class Bookshelf {
             return [];
         }
         console.log('Favorite kitaplariniz;')
-        const favoriteBooks = [];
 
-        this.books.filter((currentBookName) => {
-            const isFavorite = this.isFavoriteBook(currentBookName);
-            console.log(currentBookName);
-            return isFavorite;
-        });
+        const favoriteBooks = this.books.filter((currentBookName) =>  this.isFavoriteBook(currentBookName));
+        favoriteBooks.forEach((favoriteBookName) => { console.log(favoriteBookName); });
         return favoriteBooks;
     }
 
