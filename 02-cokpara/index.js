@@ -64,11 +64,11 @@ function urunOlustur({ id, name, price, img }) {
     <img
       src="${img}"
       alt="${name}"
-      class="urun__resim"
-      id="urunResim"
+      class="urun__resim JSurunResim"
+      
     />
     <p class="urun__text urun__alinabilecek">
-      Alabilecegin: <span id="urunAlinabilecek">${Math.floor(
+      Alabilecegin: <span class="JSurunAlinabilecek">${Math.floor(
         maxPara / price
       )}</span>
        tane
@@ -76,8 +76,8 @@ function urunOlustur({ id, name, price, img }) {
   </div>
   <div class="urun__info-container">
     <h2>${name}</h2>
-    <p class="urun__text">Fiyat: <span id="urunFiyat">${price}</span>TL</p>
-    <p class="urun__text">Alinan: <span id="urunAlindi">0</span></p>
+    <p class="urun__text">Fiyat: <span class="JSurunFiyat">${price}</span>TL</p>
+    <p class="urun__text">Alinan: <span class="JSurunAlindi">0</span></p>
     <button class="urun__ekle-btn">Satin AL</button>
   </div>
 </div>`;
@@ -89,9 +89,9 @@ function alinaBilecekRender() {
   const urunler = document.querySelectorAll(".urun");
   //Urunlerin alinabilecek sayilarini tekrardan renderlama
   urunler.forEach((urun) => {
-    let urunFiyat = urun.querySelector("#urunFiyat").textContent;
+    let urunFiyat = urun.querySelector(".JSurunFiyat").textContent;
     urunFiyat = Number(urunFiyat);
-    urun.querySelector("#urunAlinabilecek").textContent = Math.floor(
+    urun.querySelector(".JSurunAlinabilecek").textContent = Math.floor(
       maxPara / urunFiyat
     );
   });
@@ -127,7 +127,7 @@ function paraCikar(urunFiyat) {
 
 function satinAlmaEkle(tiklananUrun) {
   //Tiklanan urunun alinan sayisini secme
-  let alinmaElement = tiklananUrun.querySelector("#urunAlindi");
+  let alinmaElement = tiklananUrun.querySelector(".JSurunAlindi");
   let alinmaCount = 0;
   //Alinma sayisini arttirip tekrar alinma ogesine yazma.
   alinmaCount = alinmaElement.textContent;
@@ -138,7 +138,8 @@ function satinAlmaEkle(tiklananUrun) {
 function urunSatinAl() {
   //Tiklanan butonun parent elementini kullanarak fiyat bilgisini alma.
   const btnContainerElement = this.parentNode;
-  let urunFiyati = btnContainerElement.querySelector("#urunFiyat").textContent;
+  let urunFiyati =
+    btnContainerElement.querySelector(".JSurunFiyat").textContent;
 
   //Urun fiyatinin kontrolu ve toplam paradan cikarma:
   urunFiyati = Number(urunFiyati);
